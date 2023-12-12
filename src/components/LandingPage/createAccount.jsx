@@ -7,7 +7,7 @@ function CreateAccount(){
 
     return(
        <Page >
-            <img src={CashFlow}/>
+            <img src={CashFlow} alt={"cash flow"}/>
        </Page>
     )
 }
