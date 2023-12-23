@@ -31,10 +31,11 @@ background-color: white;
 export const ReuseP = styled.p`
     width: 20%;
     height: 20%;
-    font-weight: bold;
+    // font-weight: bold;
     font-size: larger;
     margin-bottom: ${(props) => props.spaceBelow};
     margin-left: ${(props) => props.spaceLeft};
+    margin-right: ${(props) => props.spaceRight};
     color: ${(props) => props.color};
   
 `;

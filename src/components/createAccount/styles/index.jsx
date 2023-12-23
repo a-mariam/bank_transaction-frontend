@@ -33,7 +33,8 @@ export const InputField =  styled.input`
     height: 5%;
     width : 90%;
     align-self: flex-end;
-    margin-top: ${(props) => props.spaceAbove};
     margin-left: 10px;
     background-color: rgba(235,225,221,0.949);
+    margin-top: ${(props) => props.spaceAbove};
+    placeholder = ${(props) => props.display}
 `;

@@ -19,10 +19,10 @@ return(
             {/* <SmallDiv backgroundColor={"yellow"} spaceBelow={'70px'} ><img src={Flow}/>  </SmallDiv>
             <SmallDiv backgroundColor={"yellow"} spaceRight={'130px'} > <img src={Flow}/>  </SmallDiv> */}
 
-            <ReuseP spaceLeft={'90px'} spaceBelow={'30px'} color={"white"}>About us </ReuseP>
-            <ReuseP spaceLeft={'90px'} spaceBelow={'30px'} color={"white"}>contact us</ReuseP>
-            <ReuseP spaceLeft={'90px'} spaceBelow={'30px'} color={"white"}>Loans</ReuseP>
-            <ReuseP spaceLeft={'90px'} spaceBelow={'30px'} color={"white"}>services</ReuseP>
+            <ReuseP spaceLeft={'10px'} spaceBelow={'30px'} spaceRight={'50px'} color={"white"}>About us </ReuseP>
+            <ReuseP spaceLeft={'10px'} spaceBelow={'30px'} spaceRight={'40px'} color={"white"}>contact us</ReuseP>
+            <ReuseP spaceLeft={'10px'} spaceBelow={'30px'} spaceRight={'40px'} color={"white"}>Loans</ReuseP>
+            <ReuseP spaceLeft={'10px'} spaceBelow={'30px'} spaceRight={'40px'} color={"white"}>services</ReuseP>
 
         </TopNav>
         <Section spaceBelow={'50px'} >
@@ -49,13 +49,11 @@ return(
                 <TextDiv spaceLeft={'90px'} color={"black"}>with over 10 thousand users, we guarantee seemless transactions,</TextDiv>
                 <TextDiv spaceLeft={'90px'} color={"black"}>with over 10 thousand users, we guarantee seemless transactions,</TextDiv>
 
-                <Button onClick={handleNavigate} spaceLeft={'280px'} spaceAbove={'10px'}>Create account</Button>
+                <Button onClick={handleNavigate} spaceLeft={'280px'} spaceAbove={'18px'}>Create account</Button>
             </SmallDiv>
             <SmallDiv backgroundPicture={Pay} spaceBelow={'80px'}> <img src={Pay} alt={"pay"}/> </SmallDiv>
         </Section>
-        {/* <Section>
-            <Button>frr</Button>
-        </Section> */}
+       
 
     </Page>
 )
