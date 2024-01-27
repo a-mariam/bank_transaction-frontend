@@ -4,17 +4,28 @@ import { useLocation , useNavigate} from "react-router-dom"
 
 function Response () {
 
-     const data = useLocation().state
+     const data = useLocation()
+     let first = ''
+     let second = ''
+
+     let collect = ()=>{
+    //   first = data.first;
+    //   second = data.second;
+
+
+     }
      
 
 
     return(
+    
         <div backgroun-color={"yellow"}>
-            {console.log(data)}
-           {data.id}
-           <p > FirstName : {data.firstname}</p>
-           <p > secondname : {data.secondname}</p>
-           <p > secondNumber: {data.secondNumber}</p>
+            {collect}
+            {console.log(first)}
+            {console.log(second)}
+           {data}
+           <p > FirstName : {first}</p>
+           <p > secondname : {second}</p>
 
 
         </div>

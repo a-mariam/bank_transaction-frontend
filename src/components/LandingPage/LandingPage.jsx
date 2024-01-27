@@ -31,7 +31,7 @@ return(
             </SmallDiv>
             <SmallDiv  spaceBelow={'10px'}  spaceAbove={'30px'} spaceLeft={'10%'} >
                 <ReuseP  spaceLeft={'70px'}  color={"black"}>Ca$h</ReuseP>
-                <TextDiv spaceLeft={'30px'} color={"black"}>Welcome to ca$h flow, where our customer assets is safety comes first</TextDiv>
+                <TextDiv spaceLeft={'30px'} color={"black"}>Welcome to ca$h flow, where our customer's assets safety comes first</TextDiv>
                 <TextDiv spaceLeft={'30px'}color={"black"}>with over 10 thousand users, we guarantee seemless transactions,</TextDiv>
                 <TextDiv  spaceLeft={'30px'} color={"black"}>with over 10 thousand users, we guarantee seemless transactions,</TextDiv>
                 <TextDiv spaceLeft={'30px'} color={"black"}>with over 10 thousand users, we guarantee seemless transactions,</TextDiv>

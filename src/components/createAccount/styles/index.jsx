@@ -34,7 +34,18 @@ export const InputField =  styled.input`
     width : 90%;
     align-self: flex-end;
     margin-left: 10px;
-    background-color: rgba(235,225,221,0.949);
+    background-color: transparent;
+    border-radius: 5px 5px 5px 5px navy;
     margin-top: ${(props) => props.spaceAbove};
     placeholder = ${(props) => props.display}
+`;
+
+export const SubmitButton = styled.button`
+  height: 2rem;
+  width: 30rem;
+  background-color: mediumslateblue;
+  color: white;
+  margin-top: 30px;
+  border-radius: 5px 5px 5px 5px;
+
 `;

@@ -1,5 +1,5 @@
 import {Page, ReuseP, TopNav, TextDiv, Section, SmallDiv, Button} from "../LandingPage/styles/styles";
-import { Container , Background, InputField, Background2} from "./styles";
+import { Container , Background, InputField, Background2, SubmitButton} from "./styles";
 import CashFlow from "../../assets/images/png/Group 1.png"
 import {React , useState, useCallback} from 'react'
 import { useNavigate } from "react-router-dom";
@@ -8,32 +8,48 @@ import { useNavigate } from "react-router-dom";
 
 const CreateAccount = () =>{
     
-    const intialValue = {
-        firstname : '',
-        secondname: '',
-        phoneNumber: '',
-        secondNumber: '',
+    const [intialValue, setInitialValue] = useState({
+      firstname: '',
+      secondname: '',
+      lastName: '',
+      phoneNumber: '',
+      secondNumber: '',
+      password: '',
+      transactionPin: '',
+      email: '',
+      type: ''
 
-    }
+
+    })
     const  [data, setData] = useState(intialValue)
-    const  [first, setfirst] = useState("")
-    const  [second, setsecond] = useState("")
-
     const navigate = useNavigate()
    
     
-    const collectData = (e) => {
-        
-       setData(prevState => ({
-        ...prevState,
-        [e.target.name] : e.target.value
-       }))
+     
+     
+     const createAccount = async (e) =>{
+      e.preventDefault()
+      try{
+      const url = 'https://localhost:2003/api/v1/createAccount'
+      const response = await fetch(url, {
+         method: 'POST',
+         headers:{
+          'Content-Type' : 'application/json'
+         },
+         body: JSON.stringify(data)
+      })
+      if(response.ok){
+        const userData = response.json
+        console.log("response ==> " , userData)
+      }
+    }catch(error){
+      console.log(error)
+    }
      }
-    const CollectNavigates = ( ()=>
-      
-        (handleRequest(intialValue))
-   )
+    
     const handleRequest = useCallback((parameter) =>{
+
+      console.log(parameter);
       navigate("/Response", {state: {value: parameter}})
     }, [])
 
@@ -43,16 +59,16 @@ const CreateAccount = () =>{
             <Container>
 
                 <Background2>
-                    <input value={intialValue.firstname} spaceAbove={'70px'} placeholder="FirstName" type="text" onChange={collectData}></input>
-                   <input  value={intialValue.secondNumber} spaceAbove={'20px'} placeholder="SecondName" type="text" onChange={collectData}></input> 
-                   <input  value={intialValue.secondNumber} spaceAbove={'20px'} placeholder="LastNumber" type="text" onChange={collectData}></input>
-                   <input  value={intialValue.phoneNumber} spaceAbove={'20px'} placeholder="PhoneNumber" type="text" onChange={collectData}></input>
-                   <input spaceAbove={'20px'} placeholder="secondNumber" type="text" onChange={collectData}></input>
-                   <input spaceAbove={'20px'} placeholder="Password" type="text" onChange={collectData}></input>
-                   <input spaceAbove={'20px'} placeholder="TransactionPin" type="text" onChange={collectData}></input>
-                   <input spaceAbove={'20px'} placeholder="Email" type="text" onChange={collectData}></input>
-                   <input spaceAbove={'20px'} placeholder="type" type="text" onChange={collectData}></input>
-                   <button onClick={CollectNavigates}  >Submit</button> 
+                   <InputField   spaceAbove={'30px'} placeholder="FirstName" type="text" onChange={(e) => setInitialValue({ ...intialValue, firstname: e.target.value })}></InputField>
+                   <InputField  spaceAbove={'20px'} placeholder="SecondName" type="text" onChange={(e) => setInitialValue({ ... intialValue, secondname: e.target.value })}></InputField>
+                   <InputField   spaceAbove={'20px'} placeholder="LastNumber" type="text" onChange={(e) => setInitialValue({ ...intialValue, lastName: e.target.value})}></InputField>
+                   <InputField  spaceAbove={'20px'} placeholder="PhoneNumber" type="text" onChange={(e) =>setInitialValue({ ...intialValue, phoneNumber: e.target.value}) }></InputField>
+                   <InputField spaceAbove={'20px'} placeholder="secondNumber" type="text" onChange={(e) => setInitialValue({ ...intialValue, secondNumber: e.target.value})}></InputField>
+                   <InputField spaceAbove={'20px'} placeholder="Password" type="text" onChange={(e) => setInitialValue({ ...intialValue, password: e.target.value})}></InputField>
+                   <InputField spaceAbove={'20px'} placeholder="TransactionPin" type="text" onChange={(e) => setInitialValue( {...intialValue, transactionPin: e.target.value})}></InputField>
+                   <InputField spaceAbove={'20px'} placeholder="Email" type="text" onChange={(e) => ({...intialValue, email: e.target.value})}></InputField> 
+                   <InputField spaceAbove={'20px'} placeholder="type" type="text" onChange={(e) => setInitialValue({ ...intialValue, type: e.target.value})}></InputField>
+                   <SubmitButton onClick={createAccount}  >Submit</SubmitButton> 
 
                   </Background2>
                   <Background >
