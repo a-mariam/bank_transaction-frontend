@@ -17,6 +17,9 @@ export const Background2 = styled.div`
    border-radius: 5px 5px;
    margin-left: ${(props) => props.leftSpace}
 `;
+export const Error = styled.p`
+    color : red
+`;
 
 export const Container = styled.div`
     display: flex;
