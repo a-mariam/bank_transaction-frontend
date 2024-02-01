@@ -24,29 +24,32 @@ export const Error = styled.p`
 export const Container = styled.div`
     display: flex;
     align-self:  flex-end;
-    height : 700px;
-    width : 70%;
-    box-shadow: 10px 5px 5px 5px grey;
+    height : 40rem;
+    width : 50rem;
+    box-shadow: 10px 10px 10px 10px grey;
     background-color: white;
-    margin-left: 15%;
-    margin-top: 80px;
+    // margin-left: auto;
+    // margin-rigth: auto;
+    // margin-top: 80px;
     border-radius: 30px 30px 30px 30px;
 `;
 export const InputField =  styled.input`
-    height: 5%;
-    width : 90%;
-    align-self: flex-end;
+    height: 30px;
+    width : 20rem;
+    align-self: center;
+    margin-right: 500px;
     margin-left: 10px;
     background-color: transparent;
-    border-radius: 5px 5px 5px 5px navy;
+    border-radius: 5px ;
     margin-top: ${(props) => props.spaceAbove};
     placeholder = ${(props) => props.display}
 `;
 
+
 export const SubmitButton = styled.button`
   height: 2rem;
-  width: 30rem;
-  background-color: mediumslateblue;
+  width: 20rem;
+  background-color: mediumblue;
   color: white;
   margin-top: 30px;
   border-radius: 5px 5px 5px 5px;

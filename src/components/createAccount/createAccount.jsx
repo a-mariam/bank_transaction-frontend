@@ -1,5 +1,4 @@
 import { Container , Background, InputField, Background2, SubmitButton, Error} from "./styles";
-import CashFlow from "../../assets/images/png/Group 1.png"
 import {React , useState, useCallback} from 'react'
 import { Form, useFormik } from "formik";
 import * as YUP from 'yup'
@@ -27,24 +26,14 @@ const CreateAccount = () =>{
       lastName: YUP.string().required('lastname is required'),
       password: YUP.string().required('password is required '),
       transactionPin: YUP.number().required('pin is required'),
-      phoneNumber: YUP.number().required('phone number is required')
+      phoneNumber: YUP.number().min(11).max(11).required('phone number is required')
 
     })     
      
-    const [nameError , setError] = useState('')
     const  [data, setData] = useState(intialValue)
     const navigate = useNavigate()
-    const formik = useFormik({
-      initialValues : {
-        firstname: '',
-      secondname: '',
-      lastName: '',
-      phoneNumber: '',
-      secondNumber: '',
-      password: '',
-      transactionPin: '',
-      email: '',
-      },
+    const {handleBlur, handleChange,handleSubmit ,values, errors}= useFormik({
+      initialValues : intialValue,
       validationSchema: validateInput,
       onSubmit: (values) => {
         console.log(values)
@@ -78,50 +67,32 @@ const CreateAccount = () =>{
       navigate("/Response", {state: {value: parameter}})
     }, [])
 
-   const handleSubmit ={
-
-   }
+   
 
     return(
           <Container>
 
             <Background2>
                
-                <Form onSubmit={formik.handleSubmit}>
-                  {formik.touched.firstname && formik.errors.firstname ? (
-                    <div>{formik.errors.firstname}</div>
-                  ) : null}
-                   <InputField   spaceAbove={'30px'} placeholder="FirstName" type="text" name="firstname" value={formik.values.firstname} onChange={formik.handleChange} onBlur={formik.handleBlur}></InputField>
-                   {formik.touched.secondname && formik.errors.secondname ? (
-                    <div>{formik.errors.secondname}</div>
-                   ): null}
-                   <InputField  spaceAbove={'20px'} placeholder="SecondName" type="text" name="secondname"  value={formik.values.secondNumber}onBlur={formik.handleBlur} onChange={formik.handleChange}></InputField>
-                   {formik.touched.lastName && formik.errors.lastName ? (
-                    <div>{formik.errors.lastName}</div>
-                   ): null}
-                   <InputField   spaceAbove={'20px'} placeholder="LastNumber" type="text" name="lastname" value={formik.values.lastName} onChange={formik.handleChange} onBlur={formik.handleBlur}></InputField>
-                   {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
-                    <div>{formik.errors.phoneNumber}</div>
-                   ): null}
-                   <InputField  spaceAbove={'20px'} placeholder="PhoneNumber" type="text" name="phonenumber" onChange={formik.handleChange } value={formik.values.phoneNumber} onBlur={formik.handleBlur}></InputField>
-                   {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
-                    <div>{formik.errors.phoneNumber}</div>
-                   ): null}
-                   <InputField spaceAbove={'20px'} placeholder="secondNumber" type="text" name='secondnumber' onChange={formik.handleChange} value={formik.values.secondNumber} onBlur={formik.handleBlur}></InputField>
-                   {formik.touched.password && formik.errors.password ? (
-                    <div>{formik.errors.password}</div>
-                   ): null}
-                   <InputField spaceAbove={'20px'} placeholder="Password" type="text" name='password'onBlur={formik.handleBlur} value={formik.values.password} onChange={formik.handleChange}></InputField>
-                   {formik.touched.transactionPin && formik.errors.transactionPin ? (
-                    <div>{formik.errors.transactionPin}</div>
-                   ): null}
-                   <InputField spaceAbove={'20px'} placeholder="TransactionPin" type="text" name="transactionpin" value={formik.values.transactionPin} onBlur={formik.handleBlur} onChange={formik.handleChange}></InputField>
-                   {formik.touched.email && formik.errors.email ? (
-                    <div>{formik.errors.email}</div>
-                   ): null}
-                   <InputField spaceAbove={'20px'} placeholder="Email" type="text" name="email" value={formik.values.email} onBlur={formik.handleBlur}  onChange={formik.handleChange}></InputField> 
+                <form onSubmit={handleSubmit}>
+                    <Error>{errors.firstname}</Error>
+                   <InputField   spaceAbove={'10px'} placeholder="FirstName" type="text" name="firstname" value={values.firstname} onChange={handleChange} onBlur={handleBlur}></InputField>
+                    <Error color="red">{errors.secondname}</Error>
+                   <InputField  spaceAbove={'10px'} placeholder="SecondName" type="text" name="secondname"  value={values.secondname}onBlur={handleBlur} onChange={handleChange}></InputField>
+                    <Error>{errors.lastName}</Error>
+                   <InputField   spaceAbove={'10px'} placeholder="LastNumber" type="text" name="lastname" value={values.lastName} onChange={handleChange} onBlur={handleBlur}></InputField>
+                    <Error color="red">{errors.phoneNumber}</Error>
+                   <InputField  spaceAbove={'10px'} placeholder="PhoneNumber" type="text" name="phonenumber" onChange={handleChange } value={values.phoneNumber} onBlur={handleBlur}></InputField>
+                    <Error color="red">{errors.phoneNumber}</Error>
+                   <InputField spaceAbove={'10px'} placeholder="secondNumber" type="text" name='secondnumber' onChange={handleChange} value={values.secondNumber} onBlur={handleBlur}></InputField>
+                    <Error color="red">{errors.password}</Error>
+                   <InputField spaceAbove={'10px'} placeholder="Password" type="text" name='password'onBlur={handleBlur} value={values.password} onChange={handleChange}></InputField>
+                    <Error color="red">{errors.transactionPin}</Error>
+                   <InputField spaceAbove={'10px'} placeholder="TransactionPin" type="text" name="transactionpin" value={values.transactionPin} onBlur={handleBlur} onChange={handleChange}></InputField>
+                    <Error color="red">{errors.email}</Error>
+                   <InputField spaceAbove={'10px'} placeholder="Email" type="text" name="email" value={values.email} onBlur={handleBlur}  onChange={handleChange}></InputField> 
                    <SubmitButton type="submit" >Submit</SubmitButton> 
-                </Form>
+                </form>
                  
               </Background2>
                   <Background >
