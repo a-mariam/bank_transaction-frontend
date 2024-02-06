@@ -46,18 +46,36 @@ export const Image = styled.image`
 `;
 
 export const Section = styled.div`
-  // width: 100%
-  // height: 50rem;
+  margin-top: ${(props) => props.spaceAbove}
   height: 400px;
    width: 100%;
-    background-color: #cccccc;
-  background-image : url(https://www.shutterstock.com/shutterstock/photos/2179380689/display_1500/stock-photo-happy-young-asian-saleswoman-looking-at-camera-welcoming-client-smiling-woman-executive-manager-2179380689.jpg);
+  // background-color: #cccccc;
+  background-color: ${(props) => props.backgroundColor}
+  // background-image : url(https://www.shutterstock.com/shutterstock/photos/2179380689/display_1500/stock-photo-happy-young-asian-saleswoman-looking-at-camera-welcoming-client-smiling-woman-executive-manager-2179380689.jpg);
    
 `;
 export const Slogan = styled.p`
  font-size: 50px;
- color :white;
+ color :blue;
  font-weight: 50px;
+`;
+export const Card = styled.div`
+ width: 100%;
+ height: 30rem;
+ margin-top: 30px;
+ background-color: blue;
+ border-radius: 10px 10px 10px 10px;
+`;
+export const ImageCard = styled.div`
+   width: 20rem;
+   height: 300rem:
+   margin-button: 20px;
+   border-radius: 10px 10px 10px 10px;
+   background-color: white;
+   margin-left: 30rem;
+  //  background-image: linear-gradient(white);
+  // background-image: ../../assets/images/png/Pay for goods by credit card through a smartphone in a coffee shop..png;
+
 `;
 
 export const SmallDiv = styled.div`
@@ -76,10 +94,11 @@ export const SmallDiv = styled.div`
   margin-left: 50rem;
   margin-right: 30px;
   outline: none;
-  color: white;
+  color: blue;
   font-size: 15px;
  
 `;
+
 export const DownNav = styled.div`
  background-color: blue;
  margin-top: 20px
