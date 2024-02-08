@@ -12,13 +12,14 @@ export const TopNav = styled.div`
 `;
 
 export const Button = styled.button`
-  background-image: linear-gradient( to right, navy , blue);
-  // background-color: #3333bb;
+  // background-image: linear-gradient( to right, navy , blue);
+  background-color: blue;
   color: white;
   border-radius: 50px;
-  height: 40px;
+  height: 50px;
   margin-left: ${(props) => props.spaceLeft};
   margin-top: ${(props) => props.spaceAbove};
+  margin-bottom: ${(props) => props.down}
 
 `;
 
@@ -41,56 +42,61 @@ export const ReuseP = styled.p`
 `;
 
 
-export const Image = styled.image`
-   src= ${((props) => props.imageSrc)}
-`;
 
-export const Section = styled.div`
-  margin-top: ${(props) => props.spaceAbove}
-  height: 400px;
-   width: 100%;
-  // background-color: #cccccc;
-  background-color: ${(props) => props.backgroundColor}
-  // background-image : url(https://www.shutterstock.com/shutterstock/photos/2179380689/display_1500/stock-photo-happy-young-asian-saleswoman-looking-at-camera-welcoming-client-smiling-woman-executive-manager-2179380689.jpg);
-   
-`;
+
+
 export const Slogan = styled.p`
  font-size: 50px;
- color :blue;
+ color : ${(props) => props.color}
+ margin-botton: ${(props) => props.spaceBelow}
  font-weight: 50px;
 `;
 export const Card = styled.div`
  width: 100%;
  height: 30rem;
+
  margin-top: 30px;
  background-color: blue;
  border-radius: 10px 10px 10px 10px;
 `;
-export const ImageCard = styled.div`
-   width: 20rem;
-   height: 300rem:
-   margin-button: 20px;
-   border-radius: 10px 10px 10px 10px;
-   background-color: white;
-   margin-left: 30rem;
-  //  background-image: linear-gradient(white);
-  // background-image: ../../assets/images/png/Pay for goods by credit card through a smartphone in a coffee shop..png;
+
+
+export const BlueSection = styled.div`
+ width: 100%;
+ height: 30rem;
+ background-color: blue;
+ border-radius: 15px 15px 15px 15px;
+ display: center;
 
 `;
+
+export const WhiteSection = styled.div`
+width: 100%;
+height: 30rem;
+margin-top: 30px;
+background-color: lightsteelblue;
+border-radius: 15px 15px 15px 15px;
+display: center;
+`;
+export const Img = styled.img`
+   src: ${(props) => props.image};
+   margin-top: 30px;
+   margin-left: ${(props) => props.leftSpace};
+   margin-right: ${(props) => props.rightSpace}
+   height: ${(props) => props.height};
+   width: 30%;
+   object-fit: cover;
+   border-radius: 15px 15px 15px 15px;
+
+`;
+  
 
 export const SmallDiv = styled.div`
    width: 40%;
    height: 350px;
-  //  box-shadow : 10px 10px 10px 10px grey;
-  // border: 2px solid blue;
    border-radius: 30px 20px 30px 20px;
-   background-color: transparent;
-  // margin-bottom: ${(props) => props.spaceBelow};
-  // background-color: ${(props)=> props.backgroundColor};
-  // margin-top: ${(props) => props.spaceAbove};
-  // margin-left: ${(props) => props.spaceLeft};
-  // margin-right: ${(props) => props.spaceRight};
-  // background-image: ${(props) => props.backgroundPicture};
+  //  background-color: transparent;
+  // background-image: linear-gradient(white , blue);
   margin-left: 50rem;
   margin-right: 30px;
   outline: none;

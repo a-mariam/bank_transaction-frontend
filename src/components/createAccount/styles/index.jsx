@@ -20,6 +20,14 @@ export const Background2 = styled.div`
 export const Error = styled.p`
     color : red
 `;
+export const P = styled.p`
+  color: white;
+   font-size: 90px;
+   font-weight: 100px;
+   display: table-cell;
+   margin-left: 20rem;
+   margin-top: 40rem;
+`;
 
 export const Container = styled.div`
     display: flex;
@@ -28,9 +36,9 @@ export const Container = styled.div`
     width : 50rem;
     box-shadow: 10px 10px 10px 10px grey;
     background-color: white;
-    // margin-left: auto;
-    // margin-rigth: auto;
-    // margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
     border-radius: 30px 30px 30px 30px;
 `;
 export const InputField =  styled.input`

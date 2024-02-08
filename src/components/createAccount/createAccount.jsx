@@ -1,4 +1,4 @@
-import { Container , Background, InputField, Background2, SubmitButton, Error} from "./styles";
+import { Container , Background, InputField, Background2, SubmitButton, Error, P} from "./styles";
 import {React , useState, useCallback} from 'react'
 import { Form, useFormik } from "formik";
 import * as YUP from 'yup'
@@ -83,8 +83,7 @@ const CreateAccount = () =>{
                    <InputField   spaceAbove={'10px'} placeholder="LastNumber" type="text" name="lastname" value={values.lastName} onChange={handleChange} onBlur={handleBlur}></InputField>
                     <Error color="red">{errors.phoneNumber}</Error>
                    <InputField  spaceAbove={'10px'} placeholder="PhoneNumber" type="text" name="phonenumber" onChange={handleChange } value={values.phoneNumber} onBlur={handleBlur}></InputField>
-                    <Error color="red">{errors.phoneNumber}</Error>
-                   <InputField spaceAbove={'10px'} placeholder="secondNumber" type="text" name='secondnumber' onChange={handleChange} value={values.secondNumber} onBlur={handleBlur}></InputField>
+                   <InputField spaceAbove={'10px'} placeholder="secondNumber" type="text" name='secondnumber' ></InputField>
                     <Error color="red">{errors.password}</Error>
                    <InputField spaceAbove={'10px'} placeholder="Password" type="text" name='password'onBlur={handleBlur} value={values.password} onChange={handleChange}></InputField>
                     <Error color="red">{errors.transactionPin}</Error>
@@ -96,7 +95,8 @@ const CreateAccount = () =>{
                  
               </Background2>
                   <Background >
-                    
+                      <P>Ca$h</P>
+                      <P>Flow</P>
                   </Background> 
                
            </Container>
