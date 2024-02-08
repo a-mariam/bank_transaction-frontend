@@ -24,7 +24,8 @@ return(
             <ReuseP spaceLeft={'10px'} spaceBelow={'30px'} spaceRight={'40px'} color={"white"}>services</ReuseP>
         </TopNav>
         
-        <SmallDiv   >
+        <WhiteSection image={"https://www.shutterstock.com/shutterstock/photos/2179380689/display_1500/stock-photo-happy-young-asian-saleswoman-looking-at-camera-welcoming-client-smiling-woman-executive-manager-2179380689.jpg"}>
+          <SmallDiv   >
             <Slogan color="blue">Your Assets Safety Is Our Piority</Slogan>
             Welcome to ca$h flow, where our customer's assets safety comes first
             Elevate your financial journey with our bank, where trust meets innovation. Experience the ease of convenient banking through
@@ -32,7 +33,8 @@ return(
             seeking low-risk loans for your aspirations, or navigating personalized financial solutions, our dedicated team is here to guide
             you every step of the way. Benefit from our transparent and customer-centric approach, ensuring security and competitive rates.
             Choose more than a bank; choose a reliable partner committed to your financial well-being and community development.
-        </SmallDiv>
+           </SmallDiv>
+        </WhiteSection>   
         <BlueSection>
                <Img src={Pay} leftSpace={'70rem'} height={'90%'}></Img>
                {/* <Slogan color="white" spaceBelow='60px'  >You save, We secure</Slogan> */}

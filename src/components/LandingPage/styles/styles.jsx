@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const TopNav = styled.div`
-  background-image: linear-gradient(to right, navy, blue);
+  background-color: rgb(108, 114, 130);
   display: flex;
   overflow: hidden;
   align-items: flex-end;
@@ -64,7 +64,7 @@ export const Card = styled.div`
 export const BlueSection = styled.div`
  width: 100%;
  height: 30rem;
- background-color: blue;
+ background-color: lightgrey;
  border-radius: 15px 15px 15px 15px;
  display: center;
 
@@ -74,9 +74,14 @@ export const WhiteSection = styled.div`
 width: 100%;
 height: 30rem;
 margin-top: 30px;
-background-color: lightsteelblue;
-border-radius: 15px 15px 15px 15px;
+margin-bottom: 30px;
+background-color: transparent;
 display: center;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+border-radius: 15px 15px 15px 15px;
+background-image: url(${(props) => props.image});
+background-repeat: no-repeat, repeat;
+
 `;
 export const Img = styled.img`
    src: ${(props) => props.image};
@@ -92,16 +97,17 @@ export const Img = styled.img`
   
 
 export const SmallDiv = styled.div`
-   width: 40%;
+   width: 100%;
    height: 350px;
-   border-radius: 30px 20px 30px 20px;
-  //  background-color: transparent;
+  //  border-radius: 30px 20px 30px 20px;
+   background-color: transparent;
   // background-image: linear-gradient(white , blue);
+  // background-image: url(https://cdn.corporatefinanceinstitute.com/assets/how-do-banks-make-money.jpeg);
   margin-left: 50rem;
   margin-right: 30px;
   outline: none;
-  color: blue;
-  font-size: 15px;
+  color: lightgrey;
+  font-size: 30px;
  
 `;
 
